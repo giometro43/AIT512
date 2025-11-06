@@ -56,10 +56,57 @@ public class FixedCapacityBag<Item> implements Bag<Item> {
 	public Iterator<Item> iterator() {
 		// we will generate the iterator as a class
 		return new Iterator<Item>() {
-			int index=0;
-		}
+			int index=0;// goes through all elements of bag
+
+			// implements (right clicks the interface Iterator) all the methods from
+			// Iterator
+			@Override
+			public boolean hasNext() {
+				return index<numberOfElements;//check if the index is not yet arriving at the number of elements
+			}
+
+			@Override
+			public Item next() {
+				//checks if there are more elements to iterate over
+
+				// if our index is not yet arriving at the num of elements, its less than
+				// it will return the elements in our bag 1 by 1
+				
+				if (hasNext()) return elements[index++]; //  if we have next element, we return the element as a current index
+				// and increment the index ( add to it, to go to the next element ) 
+				// if no next element, throw runtime exception 
+				throw new RuntimeException(" No more Elements lol...");
+				
+			}
+		};
 	}
 
+	
+	//method to display the elements, the two string method. to generate the nice format
+	@Override
+	public String toString() {
+		String result = "["; // to break the elements
+		
+		String seperator =""; // required because without it, formatting will be off and
+		// it will make it so that we leave a space after the ending break of the bag.
+		
+		
+		//takes all the elements from the bag, 
+		for (int i = 0; i < numberOfElements; i++) {// first element on position zero,
+			// will go to the number of elements, go element by element
+			//then add to the result the current element.
+			result += seperator + elements[i].toString()+ ""; // string representation of the element
+			seperator = " ";
+		}
+			// at the end we close with another break.
+			result+= "]"; // at the end we break it again
+			return result;
+			
+			
+			
+		}
+	
+	
 	@Override
 	/**
 	 * bc the bag is fixed in size, we need to check that the bag is not full
