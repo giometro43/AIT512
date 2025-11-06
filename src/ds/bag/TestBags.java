@@ -23,12 +23,16 @@ public class TestBags {
 		bag.add("mason jar with sour patch kids");
 		bag.add("Tart flavor with strawberry popping boba");
 		System.out.println("Bag: " + bag.toString());
+		
+		
+	
 	}
 	/**
 	 * Main methods performing all the tests.
 	 * @param args - not used
 	 */
 	public static void main(String[] args) {
+		System.out.println("Fixed Capacity Bag - Task 1 - by Giovanni Castillo");
 		testFixedCapacityBag();
 	}
 
