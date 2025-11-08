@@ -43,8 +43,8 @@ public static void testDynamicCapacityBag() {
 		
 		System.out.println("Create an empty bag with capacity 5.");
 		
-		Bag <String> bag = new DynamicCapacityBag<>(5); // creating a fixed capacity bag
-		// capacity of 5
+		Bag <String> bag = new DynamicCapacityBag<>(); // creating a fixed capacity bag before of 5, but now it uses the default from the DCB class.
+		// capacity of 10 predefined
 		System.out.println("Bag is a singleton:" + bag.isSingleton());// TASK 2C
 		System.out.println("Bag: " + bag.toString());//print the bag 
 		System.out.println("add the item: SING: the movie tickets");
@@ -96,7 +96,9 @@ public static void testDynamicCapacityBag() {
 	 * @param args - not used
 	 */ 
 	public static void main(String[] args) {
-		System.out.println("Fixed Capacity Bag - Task 1 - by Giovanni Castillo");
+		System.out.println("Dynamic Capacity Bag - Task 1 - by Giovanni Castillo");
+		//testFixedCapacityBag();
+
 		testDynamicCapacityBag();
 	}
 

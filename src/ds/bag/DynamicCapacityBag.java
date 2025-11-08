@@ -185,6 +185,12 @@ public class DynamicCapacityBag<Item> implements Bag<Item> {
 	}
 	
 	
+	//default dynamic capacity bag with the size created already as 10. if in the test class then it will be 10
+	public DynamicCapacityBag() {
+		this(10);
+	}
+	
+	
 	//method to display the elements, the two string method. to generate the nice format
 		@Override
 		public String toString() {

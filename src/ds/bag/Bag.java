@@ -76,4 +76,29 @@ public interface Bag<Item> extends Iterable<Item> {
 	 */
 	public int size();
 	
+	
+	/**
+	 * creates a string representation of the bag for formatting nice, 
+	 * seperating the items with seperator
+	 * @param start - the beginning brace
+	 * @param end - the end brace
+	 * @param seperator - a space
+	 * @return
+	 */
+	default public String toString(String start, String end, String seperator) {
+		String result =start;
+		boolean needSeperator = false;
+		for(Item item: this) {
+			if (needSeperator) {
+				result += seperator;
+				
+			} else {
+				needSeperator = true;
+			}
+			result += item.toString();
+		}
+		result += end;
+		return result;
+	}
+
 }

@@ -82,6 +82,10 @@ public class FixedCapacityBag<Item> implements Bag<Item> {
 	}
 
 	
+	/*
+	
+	OVERWRITTEN SINCE WE MADE DEFAULT IN THE BAG INTERFACE!!
+
 	//method to display the elements, the two string method. to generate the nice format
 	@Override
 	public String toString() {
@@ -109,6 +113,11 @@ public class FixedCapacityBag<Item> implements Bag<Item> {
 			
 		}
 	
+	OVERWRITTEN SINCE WE MADE DEFAULT IN THE BAG INTERFACE
+	*/
+	public String toString() {
+		return toString ("[", "]", ",");
+	}
 	
 	@Override
 	/**
