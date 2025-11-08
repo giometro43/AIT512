@@ -44,7 +44,7 @@ public class FixedCapacityBag<Item> implements Bag<Item> {
 	public FixedCapacityBag(int capacity) {
 		elements = (Item[]) new Object[capacity];
 		numberOfElements = 0;
-	}
+	} 
 	
 	
 	
@@ -85,17 +85,20 @@ public class FixedCapacityBag<Item> implements Bag<Item> {
 	//method to display the elements, the two string method. to generate the nice format
 	@Override
 	public String toString() {
+		System.out.println("Fixed Capacity Bag - Task 3 - by Giovanni Castillo");
 		String result = "["; // to break the elements
 		
 		String seperator =""; // required because without it, formatting will be off and
 		// it will make it so that we leave a space after the ending break of the bag.
-		
-		
+		 
+		String comma = ","; //task 3
 		//takes all the elements from the bag, 
 		for (int i = 0; i < numberOfElements; i++) {// first element on position zero,
 			// will go to the number of elements, go element by element
 			//then add to the result the current element.
 			result += seperator + elements[i].toString()+ ""; // string representation of the element
+			if(i < numberOfElements - 1 ) result += comma; // TASK 3
+			
 			seperator = " ";
 		}
 			// at the end we close with another break.
@@ -137,6 +140,18 @@ public class FixedCapacityBag<Item> implements Bag<Item> {
 		return numberOfElements;
 	}
 	
+	
+	/**
+	 * TASK 2b: checks if is singleton, return true. 
+	 */
+	public boolean isSingleton() {
+		
+		// checks and returns true if it has 1 element exact. 
+		System.out.println("Capacity Bag - Task 2 - by Giovanni Castillo");
+
+		return numberOfElements ==1;
+		
+	}
 	
 	
 }
