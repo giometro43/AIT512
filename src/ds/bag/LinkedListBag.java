@@ -1,0 +1,65 @@
+package ds.bag;
+
+import java.util.Iterator;
+
+/**
+ * Module: 1 Bags, Stacks and Queues
+ * Assignment: A13-PA Linked List Bag
+ * @author gcastil9@gmu.edu
+ */
+
+/**
+ * Rather than limit the size like fixed,
+ * Or double the capacity after copying a previous array into a new one,
+ * 
+ * Create an efficent way to add new elements to a new bag
+ * 
+ * we will start by creating the nodes that will contain the value for that element
+ * and also a link for the next element
+ * 
+ * 
+ * this will be crucial to understand in not only programming in this course but in general
+ */
+
+/*
+ * think of cyber systems that rely on this concept!
+ * 
+ * web browsers for back/forward navigation, 
+ * operating systems for managing processes and memory, (CRITICAL)!!!!
+ * and media players for playlist management. 
+ * 
+ */
+public class LinkedListBag<Item> implements Bag<Item> {
+
+	@Override
+	public Iterator<Item> iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void add(Item item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isSingleton() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+
+}
