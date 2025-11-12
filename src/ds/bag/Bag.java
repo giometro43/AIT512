@@ -58,16 +58,51 @@ public interface Bag<Item> extends Iterable<Item> {
 	 * you can fill it
 	 * @return
 	 */
-	public boolean isEmpty();
+	default public boolean isEmpty() {
+		return size()==0; // Task 2: Default implementations for isEmpty (2a)
+	}
 	
 	
 	/**
 	 * TASK 2a: method defined in bag to check if is singleton  
 	 * @return
 	 */
-	public boolean isSingleton();
+	default public boolean isSingleton() {
+		return size()==1;// Task 2: Default implementations for isSingleton (2a)
+	}
 	
-	
+	/**
+	 * hasDouble checks if any item appears two or more times 
+	 * for each item a in the bag, it sets a counter to zero. 
+	 * then it goes through every item b in the bag and compares a and b. 
+	 * if a is null it checks b == null, otherwise it uses a.equals(b). 
+	 * each match increments the counter. 
+	 * as soon as the counter hits 2 the method returns true. 
+	 * if no item ever reaches two matches the method returns false.
+	 * 
+	 * @return - whether or not the array has a double
+	 */
+	default public boolean hasDouble() {
+		for (Item a : this) {
+			int count = 0;
+			for (Item b : this) {
+				
+				boolean equal;
+				if (a == null) {
+					equal = (b == null);
+				} else {
+					equal = a.equals(b);
+				}
+				if (equal) {
+					count++;
+					if (count >= 2) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
 	
 	// 
 	/**

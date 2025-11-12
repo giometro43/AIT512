@@ -153,14 +153,14 @@ public class FixedCapacityBag<Item> implements Bag<Item> {
 	/**
 	 * TASK 2b: checks if is singleton, return true. 
 	 */
-	public boolean isSingleton() {
+	/*public boolean isSingleton() {
 		
 		// checks and returns true if it has 1 element exact. 
 		System.out.println("Capacity Bag - Task 2 - by Giovanni Castillo");
 
 		return numberOfElements ==1;
 		
-	}
+	} Not needed since the default implementation is now in the bag interface*/
 	
 	
 }
