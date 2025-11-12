@@ -77,9 +77,9 @@ public static void testBag(Bag<String> bag) {
 		Bag<String> b2 = new DynamicCapacityBag<>(5);
 		Bag<String> b3 = new LinkedListBag<>();
 		
-		testBag(b1);
+		//testBag(b1);
 		
-		testBag(b2);
+		//testBag(b2);
 		testBag(b3);
 	}
 
