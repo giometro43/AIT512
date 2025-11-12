@@ -206,7 +206,7 @@ public class LinkedListBag<Item> implements Bag<Item> {
 	}
 	
 	public String toString() {
-		return toString ("[", "]" , " " );
+		return toString ("[", "]" , ", " );
 	}
 	
 	
