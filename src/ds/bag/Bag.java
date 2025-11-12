@@ -134,6 +134,6 @@ public interface Bag<Item> extends Iterable<Item> {
 		}
 		result += end;
 		return result;
-	}
+	}   
 
 }
