@@ -44,6 +44,30 @@ in it and it doesnt care if it gets filled or not*/
 
 // what does the <item> part? 
 public interface Bag<Item> extends Iterable<Item> {
+	
+	/**
+	 * create the method maxFreq() with a bag parameter and returning the 
+	 * maximum frequency (0 for an empty bag)
+	 * @param bag
+	 * @return 
+	 */
+	default public int maxFreq() {
+	    int max = 0;
+	    for (Item a : this) {
+	        int count = 0;
+	        for (Item b : this) {
+	            boolean equal;
+	            if (a == null) {
+	                equal = (b == null);
+	            } else {
+	                equal = a.equals(b);
+	            }
+	            if (equal) count++;
+	        }
+	        if (count > max) max = count;
+	    }
+	    return max;
+	}
 
 	/**
 	 * adds things to the bag, naturally as a bag would do.

@@ -20,9 +20,32 @@ import java.util.Iterator;
  * 
  * this will be crucial to understand in not only programming in this course but in general
  */
+/**
+ * Task 1: Implement LinkedListBag as described in the last video with the following modifications:
+In the package ds.bag define the class implementation LinkedListBag as described in the video  
+You must modify the javadoc and inline comments to express the functionality in your own words
+Do not include the  methods that are implemented as default in the interface.
+Modify TestBags class, modify the method testDynamicCapacityBag() with 5 parameters and transform it in testBag() witth 6 parameters, similar with the video. 
+In testBag(), perform the following improvements: add an empty line at  the beginning, send a title of the test as a string, print the title after the empty line. Between each phase of the test (while adding elements) add a "-----" line to separate.
+Modify TestBags class, in the main call the tests for each of the bag implementations.
+Modify TestBags class to print at the beginning of the test the message (where you replace my name with your name):
+Linked-list Bag - Task 1 - by Mihai Boicu
+Test and debug your program
+EXECUTION PDF: add  2 screenshots of the execution (include only the first test and  the last test call).
+ANSWERS PDF: Are we testing all the cases for the linked-list implementation? Justify. (short paragraph answer)
+Task 2: In TestBags, add and test a new method to compute the maximum frequency of the elements, in other words, how many times the most frequent item (or items) will appear. For a  bag: [1,  2, 3, 4, 2, 3, 4, 3, 4, 4, 4] has max frequency 5 (because 4  appears 5 times, and the other elements appear less times).  
+Modify TestBags class, create the method maxFreq() with a bag parameter and returning the maximum frequency (0 for an empty bag)
+Modify TestBags class, modify the testBag() method, calling maxFreq where you call the isEmpty()
+Modify TestBags class, modify the main method, adding at the end a call for each type of implemention in each one element appears 3 times (on positions one, three and six), another 2 times (on positions two and four) and the last one once (on position five). 
+Modify TestBags class to print at the beginning of the test the message (where you replace my name with your name):
+Linked-list Bag - Task 2 - by Mihai Boicu
+Test and debug your program
+EXECUTION PDF: add  a screenshot of the execution.
+ANSWERS PDF: Is the test of maxFreq complete? If yes, why? if no, provide another situation to test. (short paragraph answer)
 
+ */
 /*
- * think of cyber systems that rely on this concept!
+ * think of cyber	 systems that rely on this concept!
  * 
  * web browsers for back/forward navigation, 
  * operating systems for managing processes and memory, (CRITICAL)!!!!
