@@ -100,7 +100,7 @@ public static void testBag(Bag<String> bag) {
 		//testBag(b2);
 		System.out.println("Title: LinkedListBag");
 		System.out.println("");
-		testBag(b3);
+		 testBag(b3);
 		
 		System.out.println("-----------------------------------------------------------------------------");
 		// Implements task 2: run the 3/2/1 pattern for each type of implementation
