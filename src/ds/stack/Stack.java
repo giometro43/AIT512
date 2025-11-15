@@ -85,7 +85,6 @@ default public String toString(String start, String end, String seperator) {
 	for(Item item: this) {
 		if (needSeperator) {
 			result += seperator;
-			
 		} else {
 			needSeperator = true;
 		}
