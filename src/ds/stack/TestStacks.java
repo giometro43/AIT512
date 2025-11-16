@@ -96,13 +96,22 @@ public class TestStacks {
 				"3",
 				"5"},9);
 		*/ 
-			FixedCapacityStack<String> fcs = new FixedCapacityStack<>(3);
-			testStringStack(fcs);
-			DynamicCapacityStack<String> dcs = new DynamicCapacityStack<>(3);
-			testStringStack(dcs);
+		
+	System.out.println("Linked List Stack - Task 1 - by Giovanni Castillo");
+		String [] items = {
+				"first pancake (blueberry)",
+				"second pancake (strawberry)",
+				"third pancake (chocolate chip)",
+				"fourth pancake (plain)",
+				"fifth pancake (banana)" 
+		};
+	FixedCapacityStack<String> fcs = new FixedCapacityStack<>(3);
+	testStack(fcs, items ,4);
+	DynamicCapacityStack<String> dcs = new DynamicCapacityStack<>(3);
+	testStack(dcs, items ,4);
 		
 	LinkedListStack<String> lls = new LinkedListStack<>();
-	testStringStack(lls);
+	testStack(lls, items, 4);
 	
 	}
 
@@ -182,21 +191,22 @@ private static <Item> void testPushItem(Stack<String> s, String item) { //task 2
  * @param numItemsToPop - number of items to pop from the stack
  */
 public static void testStack(Stack<String> s, String[] itemsToPush, int numItemsToPop) {
-	// add line to print name of stack being tested from main method:
-	//Ex.LinkedListStack<String> lls = new LinkedListStack<>(); testStringStack(lls);
-		
+	// Print the runtime implementation class name so the output identifies which
+	// Stack implementation (e.g. FixedCapacityStack, DynamicCapacityStack, LinkedListStack)
+	// is currently being tested.
+	System.out.println("Testing stack: " + s.getClass().getSimpleName());
 	
-		System.out.println("-------------------------------");
-		System.out.println("Empty Stack: " + s.toString("[", ">", ", "));
-		for (String item : itemsToPush) {
-			testPushItem(s, item);
-		}
-		System.out.println();
-		for (int i = 0; i < numItemsToPop; i++) {
-			testPopItem(s);
-		}
-		
+	System.out.println("-------------------------------");
+	System.out.println("Empty Stack: " + s.toString("[", ">", ", "));
+	for (String item : itemsToPush) {
+		testPushItem(s, item);
 	}
+	System.out.println();
+	for (int i = 0; i < numItemsToPop; i++) {
+		testPopItem(s);
+	}
+	
+}
 /*
 private static void testStringStack(Stack<String> s) {
 	System.out.println("Fixed Capacity Stack - Task 1 - by Giovanni Castillo");
