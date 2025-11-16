@@ -2,6 +2,7 @@ package ds.stack;
 
 
 /**
+ * INTERFACE
  * A stack is keeping a collection of the stack
  * 
  * you add items to the top of the stack, 
