@@ -142,6 +142,9 @@ public class DynamicCapacityStack <Item> implements Stack<Item>{
 	 *
 	 */
 	@Override
+	
+	
+/*
 public Iterator<Item> iterator() {
 		
 		return new Iterator<Item>() {
@@ -163,6 +166,43 @@ public Iterator<Item> iterator() {
 				if (hasNext()) return elements[index++];
 				throw new RuntimeException(" No more Elements in the stack LOL...");
 				
+			}
+		};
+	}
+	
+	
+	Needs to be updated to the new version of the iterator since we updated the interface ( LLS.java)
+
+*/
+	
+	/**
+	 * Returns an iterator to traverse the stack from top to bottom.
+	 * LINE BY LINE:
+	 * 
+	 * Returns an iterator to traverse the stack from top to bottom.
+	 * ( a class that implements the iterator interface from Stack<Item>)
+	 * 
+	 * The iterator is implemented as an anonymous inner class called Iterator<Item>
+	 * that maintains an index to track the current position in the stack defined as index
+	 * The hasNext() method checks if there are more elements to iterate over
+	 * by comparing the index with the number of elements in the stack ( numberOfElements).
+	 * The next() method returns the next element in the stack if available; ( hasNext() )
+	 * otherwise, it throws a RuntimeException indicating that there are no more elements.
+	 * -----------------------------------------------------*/
+	public Iterator<Item> iterator(){
+		return new Iterator <Item>() {
+			int index =numberOfElements-1;
+			
+			@Override
+			public boolean hasNext() {
+				return index >=0;
+			}
+			
+			@Override
+			public Item next() {
+				if (hasNext())
+					return elements[index--];
+				throw new RuntimeException ("No more elements in the stack");
 			}
 		};
 	}

@@ -53,6 +53,8 @@ public class TestStacks {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
+		/*DEPRECIATED MAIN METHOD 
 		/*
 		 * Line by line:
 		 * Prints the header for the Dynamic Capacity Stack test
@@ -64,7 +66,7 @@ public class TestStacks {
 		 * which is to add a new test for a stack of integers, 
 		 * with the values 1,4,7,9,2,4,3,5 and popping 9 values.
 		 * 
-		 */
+		 
 		System.out.println(" Dynamic Capacity Stack - Task 2 - by Giovanni Castillo");
 		
 		
@@ -93,6 +95,14 @@ public class TestStacks {
 				"4",
 				"3",
 				"5"},9);
+		*/ 
+			FixedCapacityStack<String> fcs = new FixedCapacityStack<>(3);
+			testStringStack(fcs);
+			DynamicCapacityStack<String> dcs = new DynamicCapacityStack<>(3);
+			testStringStack(dcs);
+		
+	LinkedListStack<String> lls = new LinkedListStack<>();
+	testStringStack(lls);
 	
 	}
 
@@ -121,6 +131,7 @@ public class TestStacks {
 	 * @param item - the item pushed
 	 */
 private static <Item> void testPushItem(Stack<String> s, String item) { //task 2 a
+	
 	System.out.println();
 	System.out.println("Push item: " + item);
 	try {
@@ -131,10 +142,6 @@ private static <Item> void testPushItem(Stack<String> s, String item) { //task 2
 	}
 	
 	System.out.println("Updated Stack: " + s.toString("[", ">", ", "));
-	
-	
-
-
 }
 	
 	
@@ -175,6 +182,10 @@ private static <Item> void testPushItem(Stack<String> s, String item) { //task 2
  * @param numItemsToPop - number of items to pop from the stack
  */
 public static void testStack(Stack<String> s, String[] itemsToPush, int numItemsToPop) {
+	// add line to print name of stack being tested from main method:
+	//Ex.LinkedListStack<String> lls = new LinkedListStack<>(); testStringStack(lls);
+		
+	
 		System.out.println("-------------------------------");
 		System.out.println("Empty Stack: " + s.toString("[", ">", ", "));
 		for (String item : itemsToPush) {
@@ -221,10 +232,37 @@ private static void testStringStack(Stack<String> s) {
 	testPopItem(stack1);
 	testPopItem(stack1);
 	testPopItem(stack1);
-	
-	
-	
-} */
+} DEPRECIATED CODE*/
+
+/**
+ * LINE BY LINE:
+ * Prints the header for the test named testStringStack
+ * Creates a new Fixed Capacity Stack of Strings with a capacity of 5 ( named s )
+ * Prints the empty stack with specific formatting ( [ , > , ,  )
+ * Pushes four pancake strings onto the stack using the testPushItem method
+ * -------------------------------------------------------------------------------
+ * this is compared to the depreciated testStringStack in that:
+ * 
+ * it only pushes four items instead of five
+ * it does not perform any pop operations,
+ * it is focused solely on testing the push functionality
+ * line count goes from 57 to 36
+ * 
+ * 
+ * 
+ * 
+ * 
+ * @param s - the stack to be tested. 
+ */
+
+
+public static void testStringStack(Stack<String> s) {
+	System.out.println( "Empty Stack: " + s.toString("[", ">", ", "));
+	testPushItem(s, "first pancake (blueberry)");
+	testPushItem(s, "second pancake (strawberry)");
+	testPushItem(s, "third pancake (chocolate chip)");
+	testPushItem(s, "fourth pancake (plain)");
+}
 
 
 
