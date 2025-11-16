@@ -18,7 +18,7 @@ package ds.stack;
  * ending with the top.
  * so the bottom item will be printed first, top item printed last
  * 
- * 
+ * @author gcastillo
  * @param <Item>
  */
 
@@ -69,9 +69,14 @@ default public boolean isEmpty() {
  * @return - the size of the stack (an int)
  */
 public int size();
+/**
+
+
+
 
 /**
- * the formatter of the Stack
+ * the formatter of the Stack (OLD VERSION) - LIFO
+ * 
  * @param start - the start of the array, visualized by brace
  * @param end - the end of the array, visualized by brace
  * @param seperator - which can be anything, whitespc, comma
@@ -79,7 +84,11 @@ public int size();
  * 
  * NOTE:
  * the order of the elements will be displayed starting with the base of the stack
- */
+ 
+
+
+---------------------------------------------------------------------------------- 
+ * TODO:  used to be from top to bottom, change to bottom to top
 default public String toString(String start, String end, String seperator) {
 	String result =start;
 	boolean needSeperator = false;
@@ -93,7 +102,40 @@ default public String toString(String start, String end, String seperator) {
 	}
 	result += end;
 	return result;
+*//**
+ * the formatter of the Stack
+ * creates a string representation of the stack starting from the start string, ending with the end string
+ * and seperating the items with the seperator. the method will display the elements
+ * starting with the top of the stack down to the base of the stack.(FILO)
+ * 
+ * this is compared to the old version which displayed from base to top (LIFO)
+ *  
+ * @param start
+ * @param end
+ * @param seperator
+ * @return - the resulting formatted array output
+ */
+default public String toString(String start, String end, String seperator) {
+	String result = start;
+	boolean needSeperator = false;
+	// we need to reverse the order of the elements when displaying
+	// so we can use an array to store the elements temporarily
+	// then we display them in reverse order
+	// first we need to know the size of the stack
+	for(Item item: this) {
+		if (needSeperator) {
+			result += seperator;
+		} else {
+			needSeperator = true;
+		}
+		result += item.toString();
+	}
+	result += end;
+	return result;
 }   
+
+
+
 
 
 
