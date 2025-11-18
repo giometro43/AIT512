@@ -1,5 +1,6 @@
 package ds.queue;
 
+import java.util.Iterator;
 
 /**
  * Using a FIFO setup, which makes it so that we can get one person in one person out
@@ -35,6 +36,61 @@ public interface Queue<Item> extends Iterable<Item> {
 	 * Assignment: 
 	 * @author gcastillo
 	 */
+	
+	
+	/**
+	 * Example : When a call center gets a new customer on the line, they add them to the end of the queue
+	 * so that is what enqueue does. It adds an item to the end of the queue.
+	 *------------------------------------------------------------------------------------------------ 
+	 * Add an item at the end of the queue
+	 * 
+	 * @param item - item thte Item to be added
+	 */
+	public void enqueue (Item item);
+	
+	/**Example : when a call center finishes with a customer, they take the next customer in line
+	 * so that is what dequeue does. It removes the next item in line and returns it. 
+	 * 
+	 * What does returning mean? : When you call a function/method, you can have it give you something back
+	 * . So when you dequeue, you are asking the queue to give you back the next item in line
+	 * -------------------------------------------------------------------------------------------------
+	 * Remove and return the item from the beginning of the queue
+	 * 
+	 * @return - the next item in the queue (from the beginning 
+	 */
+	public Item dequeue();
+	
+	/**
+	 * the number of elements in the queue is named the size of the queue
+	 * 
+	 * @return the size of the queue
+	 */
+	public int size();
+	
+	/**
+	 * Check if the queue is empty (no elements in the queue)
+	 * 
+	 * @return true if the queue is empty, false otherwise.
+	 */
+	default boolean isEmpty() {
+		return size() == 0;
+	}
+	
+	default public String toString(String start, String end, String separator) {
+		
+		String result  = start;
+		boolean needSeparator = false;
+		for (Item item : this) {
+			if (needSeparator) {
+				result += separator;
+			}
+			result += item.toString();
+			needSeparator = true;
+		}
+		 result += end;
+		 return result;
+		
+	}
 }
 
 
